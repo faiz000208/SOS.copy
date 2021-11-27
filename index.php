@@ -96,7 +96,7 @@
     </div>
   </div>
         <footer class="bg-light py-5">
-            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Hotel Mangement system | <a href="https://www.sourcecodester.com/" target="_blank">Sourcecodester</a></div></div>
+            <div class="container"><div class="small text-center text-muted">Copyright © 2021 - Soryu Cafe Management | <a href="https://photos.app.goo.gl/sDciacdDVsbGouXs8" target="_blank">Soryu Cafe Inc</a></div></div>
         </footer>
         
        <?php include('footer.php') ?>

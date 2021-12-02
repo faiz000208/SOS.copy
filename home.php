@@ -3,7 +3,7 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-10 align-self-end mb-4 page-title">
-                    	<h3 class="text-white">Welcome to <?php echo $_SESSION['setting_name']; ?></h3>
+                    	<h1 class="text-white"><b>Welcome to <?php echo $_SESSION['setting_name']; ?></b></h1>
                         <hr class="divider my-4" />
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#menu">Order Now</a>
 

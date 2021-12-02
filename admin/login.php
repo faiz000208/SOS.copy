@@ -84,7 +84,9 @@ $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
   		<div id="login-right">
   			<div class="card col-md-8">
   				<div class="card-body">
-  					<form id="login-form" >
+  					<form id="login-form">
+  					    <center><h3><b>Admin Login</b></h3></center>
+  					    <br>
   						<div class="form-group">
   							<label for="username" class="control-label">Username</label>
   							<input type="text" id="username" name="username" class="form-control">

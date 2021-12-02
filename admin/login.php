@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin | Online Food Ordering System</title>
+  <title>Admin | Online Food Ordering Verification</title>
  	
 
 <?php include('./header.php'); ?>
@@ -78,7 +78,7 @@ $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
   <main id="main" class=" bg-dark">
   		<div id="login-left">
   			<div class="logo">
-  				<img src="../assets/img/sample_logo.png" alt="">
+  				<img src="../assets/img/logo_v2.png" alt="">
   			</div>
   		</div>
   		<div id="login-right">

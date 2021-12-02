@@ -30,14 +30,14 @@ $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
 	    /*background: #007bff;*/
 	}
 	main#main{
-		width:100%;
+		width: 100%;
 		height: calc(100%);
 		background:white;
 	}
 	#login-right{
 		position: absolute;
-		right:0;
-		width:40%;
+		right: 0;
+		width: 40%;
 		height: calc(100%);
 		background:white;
 		display: flex;
@@ -45,8 +45,8 @@ $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
 	}
 	#login-left{
 		position: absolute;
-		left:0;
-		width:60%;
+		left: 0;
+		width: 60%;
 		height: calc(100%);
 		background:#00000061;
 		display: flex;
@@ -61,13 +61,13 @@ $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
 	    background: white;
 	    border-radius: 50% 50%;
 	    height: 29vh;
-	    width: 13vw;
+	    width: 14vw;
 	    display: flex;
 	    align-items: center;
 	}
 	.logo img{
-		height: 80%;
-		width: 80%;
+		height: 100%;
+		width: 100%;
 		margin: auto
 	}
 </style>
@@ -75,7 +75,7 @@ $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
 <body>
 
 
-  <main id="main" class=" bg-dark">
+  <main id="main" class="bg-dark">
   		<div id="login-left">
   			<div class="logo">
   				<img src="../assets/img/logo_v2.png" alt="">
@@ -100,8 +100,6 @@ $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
   				</div>
   			</div>
   		</div>
-   
-
   </main>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>

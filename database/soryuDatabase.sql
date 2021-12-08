@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2021 at 01:54 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.25
+-- Generation Time: Dec 08, 2021 at 07:39 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sos-edited-new`
+-- Database: `soryuDatabase`
 --
 
 -- --------------------------------------------------------
@@ -71,7 +71,6 @@ CREATE TABLE `order_list` (
 
 CREATE TABLE `product_list` (
   `id` int(30) NOT NULL,
-  `category_id` int(30) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `price` float NOT NULL DEFAULT 0,
@@ -83,15 +82,17 @@ CREATE TABLE `product_list` (
 -- Dumping data for table `product_list`
 --
 
-INSERT INTO `product_list` (`id`, `category_id`, `name`, `description`, `price`, `img_path`, `status`) VALUES
-(4, 4, 'Chicken Chop Barista', 'The chicken is well prepared with a fresh chicken. You could get a refund if the taste is wrong', 14, '1600652880_chicken.jpg', 1),
-(5, 3, 'Lamb Steak Origami', 'Lamb Stick lagi segar disembelih dlm tempoh 5 hari sebelum dimasak. Ini kerana kami mengutamakan daging yang merah fresh untuk dimasak.', 20, '1600652880_steak.jpg', 1),
-(6, 3, 'Buttermilk Chicken', 'The taste is originally from butter which was imported from Mexico', 20, '1600656600_checken2.jpg', 1),
-(7, 1, 'Iced Lemon Paprican', 'Iced Lemon Paprican menjadi rebutan ramai sejak terciptanya iced lemon tea. Paprican merujuk kepada cara pembuatan air ini iaitu dengan cara Mexican.', 5, '1638966720_Tea-Ais.jpg', 1),
-(8, 1, 'Teabeng Forza Antartica', 'Teabeng fresh yang dibuat daripada duan teh import', 5, '1638966840_Tea-Beng.jpg', 1),
-(9, 1, 'Cafe Favrito Espresso', 'Kopi ini diperbuat daripada biji kopi yang berkualiti tinggi yang diimport dari Bosnia. Kopi ini disaluti dengan rasa pahit dan manis.', 5, '1638966960_Kopi.jpg', 1),
-(10, 4, 'Ricardo Aglio Olio', 'Kind of shagetti from mexican that been verified by Mexico.', 10, '1638967020_Mee.jpg', 1),
-(11, 5, 'Mc Flurry Costa', 'The ice cream is from Mc Donald. We are having a partnership with them. It is fresh ice cream. ', 5, '1638967260_McFlurry.jpg', 1);
+INSERT INTO `product_list` (`id`, `name`, `description`, `price`, `img_path`, `status`) VALUES
+(4, 'Chicken Chop Barista', 'The chicken is well prepared with a fresh chicken. You could get a refund if the taste is wrong', 14, '1600652880_chicken.jpg', 1),
+(5, 'Lamb Steak Origami', 'Lamb Stick lagi segar disembelih dlm tempoh 5 hari sebelum dimasak. Ini kerana kami mengutamakan daging yang merah fresh untuk dimasak.', 20, '1600652880_steak.jpg', 1),
+(6, 'Buttermilk Chicken', 'The taste is originally from butter which was imported from Mexico', 20, '1600656600_checken2.jpg', 1),
+(7, 'Iced Lemon Paprican', 'Iced Lemon Paprican menjadi rebutan ramai sejak terciptanya iced lemon tea. Paprican merujuk kepada cara pembuatan air ini iaitu dengan cara Mexican.', 5, '1638966720_Tea-Ais.jpg', 1),
+(8, 'Teabeng Forza Antartica', 'Teabeng fresh yang dibuat daripada duan teh import', 5, '1638966840_Tea-Beng.jpg', 1),
+(9, 'Cafe Favrito Espresso', 'Kopi ini diperbuat daripada biji kopi yang berkualiti tinggi yang diimport dari Bosnia. Kopi ini disaluti dengan rasa pahit dan manis.', 5, '1638966960_Kopi.jpg', 1),
+(10, 'Ricardo Aglio Olio', 'Kind of shagetti from mexican that been verified by Mexico.', 10, '1638967020_Mee.jpg', 1),
+(11, 'Mc Flurry Costa', 'The ice cream is from Mc Donald. We are having a partnership with them. It is fresh ice cream. ', 5, '1638967260_McFlurry.jpg', 1),
+(13, 'test', 'test menu', 1, '1638987720_Screenshot (5).png', 1),
+(14, 'test1', 'test menu plok', 2, '1638988080_Screenshot (4).png', 1);
 
 -- --------------------------------------------------------
 
@@ -213,25 +214,25 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `order_list`
 --
 ALTER TABLE `order_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `product_list`
 --
 ALTER TABLE `product_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `system_settings`

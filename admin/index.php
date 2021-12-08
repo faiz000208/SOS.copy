@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Online Food Ordering System</title>
- 	
+  <link rel="icon" href="../assets/img/logo_v2.png" type="image/jpg">
 
 <?php
 	session_start();

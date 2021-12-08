@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Admin | Online Food Ordering Verification</title>
- 	
+  <link rel="icon" href="../assets/img/logo_v2.png" type="image/jpg">
 
 <?php include('./header.php'); ?>
 <?php include('./db_connect.php'); ?>

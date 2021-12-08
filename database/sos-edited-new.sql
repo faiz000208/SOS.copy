@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Dec 06, 2021 at 04:41 PM
--- Server version: 5.7.33
--- PHP Version: 7.4.19
+-- Host: 127.0.0.1
+-- Generation Time: Dec 08, 2021 at 01:54 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,27 +38,6 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category_list`
---
-
-CREATE TABLE `category_list` (
-  `id` int(30) NOT NULL,
-  `name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `category_list`
---
-
-INSERT INTO `category_list` (`id`, `name`) VALUES
-(1, 'Beverages'),
-(3, 'Best Sellers'),
-(4, 'Meals'),
-(5, 'Snacks');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `orders`
 --
 
@@ -68,7 +47,7 @@ CREATE TABLE `orders` (
   `address` text NOT NULL,
   `mobile` text NOT NULL,
   `email` text NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '0'
+  `status` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -95,9 +74,9 @@ CREATE TABLE `product_list` (
   `category_id` int(30) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `price` float NOT NULL DEFAULT '0',
+  `price` float NOT NULL DEFAULT 0,
   `img_path` text NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '0= unavailable, 2 Available'
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '0= unavailable, 2 Available'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -105,11 +84,14 @@ CREATE TABLE `product_list` (
 --
 
 INSERT INTO `product_list` (`id`, `category_id`, `name`, `description`, `price`, `img_path`, `status`) VALUES
-(1, 3, 'Diet Coke', 'In Can', 20, '1600652160_diet_coke.jpg', 1),
-(3, 3, 'Lemon Iced Tea', 'Sample', 15, '1600652520_lemon iced tea.jpg', 1),
-(4, 4, 'Chicken', 'Sample only', 150, '1600652880_chicken.jpg', 1),
-(5, 3, 'Steak', 'Sample 2', 200, '1600652880_steak.jpg', 1),
-(6, 3, 'Chicken2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 250, '1600656600_checken2.jpg', 1);
+(4, 4, 'Chicken Chop Barista', 'The chicken is well prepared with a fresh chicken. You could get a refund if the taste is wrong', 14, '1600652880_chicken.jpg', 1),
+(5, 3, 'Lamb Steak Origami', 'Lamb Stick lagi segar disembelih dlm tempoh 5 hari sebelum dimasak. Ini kerana kami mengutamakan daging yang merah fresh untuk dimasak.', 20, '1600652880_steak.jpg', 1),
+(6, 3, 'Buttermilk Chicken', 'The taste is originally from butter which was imported from Mexico', 20, '1600656600_checken2.jpg', 1),
+(7, 1, 'Iced Lemon Paprican', 'Iced Lemon Paprican menjadi rebutan ramai sejak terciptanya iced lemon tea. Paprican merujuk kepada cara pembuatan air ini iaitu dengan cara Mexican.', 5, '1638966720_Tea-Ais.jpg', 1),
+(8, 1, 'Teabeng Forza Antartica', 'Teabeng fresh yang dibuat daripada duan teh import', 5, '1638966840_Tea-Beng.jpg', 1),
+(9, 1, 'Cafe Favrito Espresso', 'Kopi ini diperbuat daripada biji kopi yang berkualiti tinggi yang diimport dari Bosnia. Kopi ini disaluti dengan rasa pahit dan manis.', 5, '1638966960_Kopi.jpg', 1),
+(10, 4, 'Ricardo Aglio Olio', 'Kind of shagetti from mexican that been verified by Mexico.', 10, '1638967020_Mee.jpg', 1),
+(11, 5, 'Mc Flurry Costa', 'The ice cream is from Mc Donald. We are having a partnership with them. It is fresh ice cream. ', 5, '1638967260_McFlurry.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -131,7 +113,7 @@ CREATE TABLE `system_settings` (
 --
 
 INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `about_content`) VALUES
-(1, 'Soryu Cafe', 'soryu@gmail.com', '019-9632556', 'themev3.jpg', '&lt;h2 style=&quot;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 2rem; color: rgb(33, 37, 41); background: transparent; text-align: center; position: relative;&quot;&gt;&lt;span style=&quot;background: transparent; position: relative;&quot;&gt;ABOUT US&lt;/span&gt;&lt;/h2&gt;&lt;h5 style=&quot;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 15px; color: rgb(0, 0, 0); text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;The Cafe was founded in Kota Bharu by Mr. Fahmi bin Feerman in early 2021. The cafe serves beverages and foods such as sandwiches, soup, salads, breakfast, pastries and desserts. The cafe will operates from 8.00 a.m. to 10.00 p.m. and from Saturday to Thursday. The cafe will be closed on Friday.&amp;nbsp;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;In addition to our full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch sandwiches, as well as a selection of sides and salads and other good stuff.&lt;/span&gt;&lt;/span&gt;&lt;/h5&gt;&lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; font-weight: 400; text-align: justify;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;/p&gt;&lt;h2 style=&quot;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 28px; color: rgb(33, 37, 41); background: transparent; text-align: center; position: relative;&quot;&gt;&lt;span style=&quot;font-size: 28px; font-weight: bolder; background: transparent; position: relative;&quot;&gt;Trademark&lt;/span&gt;&lt;/h2&gt;&lt;h2 style=&quot;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 2rem; color: rgb(33, 37, 41); background: transparent; text-align: center; position: relative;&quot;&gt;&lt;p style=&quot;margin-bottom: 1rem; color: rgb(0, 0, 0); font-size: 15px;&quot;&gt;&lt;i style=&quot;color: rgb(0, 0, 0); font-size: 15px;&quot;&gt;&quot;Sesempurna pun apa kopi yang kamu buat. Kopi tetap Kopi. Punya sisi pahit yang tidak dapat kamu sembunyikan.&quot;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 1rem; color: rgb(0, 0, 0); font-size: 15px;&quot;&gt;Dewa, Kopi Enthusiast: Faiz Soryu&lt;/p&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;');
+(1, 'Soryu Cafe', 'soryu@gmail.com', '019-9632556', 'themev3.jpg', '&lt;h4 style=&quot;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(33, 37, 41); background: transparent; text-align: center; position: relative;&quot;&gt;&lt;span style=&quot;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(33, 37, 41); background: transparent; text-align: center; position: relative; font-size: 24px;&quot;&gt;&lt;span style=&quot;font-size:20px;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(33, 37, 41); background: transparent; text-align: center; position: relative;&quot;&gt;The Cafe was founded in Kota Bharu by Mr. Fahmi bin Feerman in early 2021. The cafe serves beverages and foods such as sandwiches, soup, salads, breakfast, pastries and desserts. The cafe will operates from 8.00 a.m. to 10.00 p.m. and from Saturday to Thursday. The cafe will be closed on Friday.&amp;nbsp;&lt;span style=&quot;background: transparent; color: rgb(33, 37, 41); font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 20px; margin-bottom: 0.5rem; position: relative;&quot;&gt;In addition to our full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch sandwiches, as well as a selection of sides and salads and other good stuff.&lt;/span&gt;&lt;span style=&quot;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; color: rgb(33, 37, 41); background: transparent; text-align: center; position: relative; font-size: 32px;&quot;&gt;&lt;/h4&gt;&lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Open Sans&amp;quot;, Arial, sans-serif; font-weight: 400; text-align: justify;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;/p&gt;&lt;h2 style=&quot;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 28px; color: rgb(33, 37, 41); background: transparent; text-align: center; position: relative;&quot;&gt;&lt;span style=&quot;font-size: 28px; font-weight: bolder; background: transparent; position: relative;&quot;&gt;Trademark&lt;/span&gt;&lt;/h2&gt;&lt;h2 style=&quot;margin-bottom: 0.5rem; font-family: &amp;quot;Merriweather Sans&amp;quot;, -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, &amp;quot;Helvetica Neue&amp;quot;, Arial, &amp;quot;Noto Sans&amp;quot;, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; font-size: 2rem; color: rgb(33, 37, 41); background: transparent; text-align: center; position: relative;&quot;&gt;&lt;p style=&quot;margin-bottom: 1rem; color: rgb(0, 0, 0); font-size: 15px;&quot;&gt;&lt;i style=&quot;color: rgb(0, 0, 0); font-size: 15px;&quot;&gt;&quot;Sesempurna pun apa kopi yang kamu buat. Kopi tetap Kopi. Punya sisi pahit yang tidak dapat kamu sembunyikan.&quot;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 1rem; color: rgb(0, 0, 0); font-size: 15px;&quot;&gt;Dewa, Kopi Enthusiast: Faiz Soryu&lt;/p&gt;&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;');
 
 -- --------------------------------------------------------
 
@@ -144,7 +126,7 @@ CREATE TABLE `users` (
   `name` varchar(200) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `type` tinyint(1) NOT NULL DEFAULT '2' COMMENT '1=admin , 2 = staff'
+  `type` tinyint(1) NOT NULL DEFAULT 2 COMMENT '1=admin , 2 = staff'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -185,12 +167,6 @@ INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `passwor
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `category_list`
---
-ALTER TABLE `category_list`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -237,31 +213,25 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `category_list`
---
-ALTER TABLE `category_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order_list`
 --
 ALTER TABLE `order_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `product_list`
 --
 ALTER TABLE `product_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `system_settings`

@@ -22,6 +22,9 @@
 
     </style>
     <title>Soryu Cafe Homepage</title>
+    
+    <!-- Logo Soryu Cafe -->
+    <link rel="icon" href="assets/img/logo_v2.png" type="image/jpg">
 </head>
 
 <body id="page-top">
